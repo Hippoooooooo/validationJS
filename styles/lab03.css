@@ -1,0 +1,77 @@
+
+/*
+filename: [lab03.css]
+author: [Evelyn Li]
+created: [13/03/2023]
+last modified: [14/03/2023]
+description: [lab03.html]
+*/
+
+
+*{
+	font-family: calabri,sans-serif;
+	color: #2F4F4F;
+}
+
+h1{
+	color: purple;
+	font-size: 2em;
+	font-weight: bold;	}
+
+h2{
+	color:rgb(0,128,128);
+	font-size: 1.5em;
+	font-weight: bold;	
+}
+
+aside,footer{
+	font-style: italic;
+}
+
+h1,h2,h3{
+	font-style:arial,sans-serif;
+}
+
+table,th,tr,td{
+	border:1px solid black;
+}
+
+#images{
+	text-align :center;
+}
+
+#headings3{
+	color :red;
+}
+
+.special{
+	color: darkorange;
+	font-weight: bold;
+}
+
+.month{
+	text-align : right;
+}
+
+nav a {
+	text-decoration : none;
+	padding : 0.2em 0.6em;
+	border : 4px solid #ccc;
+}
+
+ul {
+	list-style-type : square;
+}
+
+ol > ul{
+	list-style-type :square ;
+}
+
+aside : hover{
+	visibility: hidden ;
+}
+
+nav :hover{
+	background-color : lightblue;
+	border-color: darkblue
+}

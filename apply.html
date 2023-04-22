@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name ="viewpoint" width = "device-width, initial-scale =1.0 "/>
+<meta name="description" content="apply page for an IT company" />
+<meta name="keywords" content="Apply page" />
+<meta name="author" content="Evelyn Li"  />
+<title>Apply Page</title>
+<link rel="stylesheet" href="styles/stylesheet1.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="validateForm.js"></script>
+</head>
+<body>
+    <header>
+      <!-- navbar -->
+      <nav
+        class="nav navbar navbar-expand-lg bg-warning text-primary"
+      >
+        <div class="container">
+          <a href="#" class="navbar-brand"
+            ><img src="styles/images/futlogo.png" alt="future"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navmenu"
+          >
+            <span class="navbar toggler icon"></span>>
+          </button>
+          <h1>
+            <span class="justify-content-between text-success">Future Mind</span
+            ><br/><span class="justify-content-between text-info"
+              >We design ideas that will happen
+            </span>
+          </h1>
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto ">
+              <li class="nav-item">
+                <a href="index.html" class="nav-link text-success">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="jobs.html" class="nav-link text-success">Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a href="apply.html" class="nav-link text-success">Application</a>
+              </li>
+              <li class="nav-item">
+                <a href="about.html" class="nav-link text-success">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="enhancements.html" class="nav-link text-success"
+                  >Enhancements</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+   <!-- section -->
+	<section class="bg-light text-center">
+	 <div class="container text-dark text-center lead">
+		<form  id ="regform" onclick="return validate()" action="http://mercury.swin.edu.au/it000000/formtest.php" method="post">
+		 <div class="row lead">
+			<div class="col-6 lead my-3">
+		      <label for="floatingInput">Job Reference Number</label>
+			  <input type="text" class="form-control" id="JFN" name = "JFN"  pattern="^[A-Za-z0-9]{5}$"  required="required"/>
+			</div>
+			<div class="col-6 lead my-3">
+		      <label for="floatingInput">Given Name</label>
+			  <input type="text" class="form-control" id="Given_Name" name= "Given_Name" pattern="^[a-zA-Z]{1-20}$" maxlength="20" required="required"/>
+
+			</div>
+			<div class="col-6 lead my-3">
+			  <label for="floatingInput">Last Name</label>
+			  <input type="text" class="form-control" id="Last_Name" name = "Last_Name" pattern="^[a-zA-Z]{1-20}$" maxlength="20" required="required"/>
+			</div>
+			<div class="col-6 lead my-3">
+              <label for="floatingInput">Email address</label>
+			  <input type="email" class="form-control" id="e_add" name = "e_add" placeholder="name@example.com" required="required">
+			</div> 
+			<div class="col-6 lead my-3">
+			  <label for="floatingInput">Date Of Birth</label>
+			  <input type="text" class="form-control" onblur="validateDob()" id="date_of_birth" name="date_of_birth" placeholder="dd/mm/yyyy" required="required">
+			  <span id ="dobError" > </span>
+			</div>
+		   <div class="col-6 lead my-3">
+			 <fieldset>
+				<legend>Gender</legend>
+				<label for="gender">Female</label>
+					<input type="radio" id="female" name = "female" value="female"/>
+					<label for="gender">Male</label>
+					<input type="radio" id="male"  name = "male" value="male"/>	
+			</fieldset>
+		   </div>
+		   <div class="col-6 lead my-3">
+			 <label for="floatingInput">Street address</label>
+			 <input type="text" class="form-control" id="Street_Address" name = "Street_Address" maxlength="40" required="required">
+		   </div>
+		   <div class="col-6 lead my-3">
+			 <label for="floatingInput">Surburb/Town</label>
+			 <input type="text" class="form-control" id="Suburb" name ="Suburb"  maxlength="40" required="required">
+		   </div>
+
+		  <div class="col-6 lead my-3">
+			 <label for="state">Please select state </label>
+			 <select name="state" id="state">
+				<option value=""></option>
+				<option value="VIC">VIC</option>
+				<option value="NSW">NSW</option>
+				<option value="QLD">QLD</option>
+				<option value="NT">NT</option>
+				<option value="WA">WA</option>
+				<option value="SA">SA</option>
+				<option value="TAS">TAS</option>
+				<option value="ACT">ACT</option>
+			</select>
+			<span id="stateError"></span>
+		  </div>
+		  <div class="col-6 lead my-3">
+			 <label for="floatingInput">Postcode</label>
+			 <input type="text" class="form-control" pattern= "[0-9]{1,4}" id="post_code" name="post_code" maxlength="4" required="required">
+			 <span id ="postcode_Error" > </span>
+		   </div> 
+		   <div class="col-6 lead my-3">
+			 <label for="floatingInput">Phone Number</label>
+			 <input type="text" class="form-control" pattern= "^\d{3,4}\s?\d{3,4}\s?\d{0,4}$" id="phone_number" name= "phone_number" maxlength="12" minlength ="8" required="required">
+		   </div>
+		   <div class="col-12 lead my-3">
+			 <label for="Other_skills" name ="Other_skills">What other skills you have </label>
+			 
+		     <p><label for="html">HTML</label> 
+			    <input type="checkbox" id="html" name="category[]" value="html" />
+
+			   <label for="css">CSS</label> 
+			   <input type="checkbox" id="css" name="category[]" value="css"/>
+		
+			  <label for="javascript">Javascript</label> 
+			  <input type="checkbox" id="javascript" name="category[]" value="javascript"/>
+			
+			  <label for="php">PHP</label> 
+			  <input type="checkbox" id="php" name="category[]" value="php"/>
+			
+			  <label for="mysql">MySQL</label> 
+			  <input type="checkbox" id="mysql" name="category[]" value="mysql"/>
+
+			  <label for="other-skills">other skills</label> 
+			  <input type="checkbox" id="other-kills-checkbox" name="category[]" value="other skills"/>
+
+			  <textarea id="otherchecktextarea" name="other-skills" rows="1" cols="30"></textarea>
+			  <span id="textError"></span>
+		     </p>
+		   </div>
+	</div>
+		<p>
+			<label for="date">Date</label>
+			<input type="text" name="date" id="date" placeholder="dd/mm/yyyy" pattern="\d{1,2}\/\d{1,2}\/\d{4}" ></input>
+			</p>
+			<p>
+			<label for="time">Time</label>
+			<input type="time" name="time" id="time" placeholder="HH:MM AM/PM" pattern="(0?[1-9])|(1[0-2]):[0-5]0-9(AM|PM)"></input>
+		</p>
+	<input type= "submit" value="Book"/>
+	<input type= "reset" value="Reset Form"/>
+	</form>
+</section>	
+    <!-- footer -->
+	<footer class = "flex-container">
+      <div class="row">
+        <p class ="my-5">&copy;<a href="https://mercury.swin.edu.au/cos60004/s104147215/assign1/index.html"><strong><span class ="text-success">Future Mind</span></strong>
+       Contact me:<a href="mailto:104147215@student.swin.edu.au">Evelyn Li</a>
+       </p>
+      </div>      
+    </footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
